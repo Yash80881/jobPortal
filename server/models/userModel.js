@@ -32,15 +32,49 @@ const userSchema = new mongoose.Schema(
       default: false,
     },
 
-    profilePhoto: {
-      type: String,
-      default: "",
-    },
+    profile: {
 
-    resume: {
-      type: String,
-      default: "",
-    },
+        bio: {
+          type: String,
+          default: ""
+        },
+
+        skills: [{
+          type: String
+        }],
+
+          education: {
+            type: String,
+            default: ""
+          },
+
+          experience: {
+            type: String,
+            default: ""
+          },
+
+        profilePhoto: {
+            url: {
+              type: String,
+              default: ""
+            },
+            public_id: {
+              type: String,
+              default: ""
+            }
+        },
+
+          resume: {
+                url: {
+                  type: String,
+                  default: ""
+                },
+                public_id: {
+                  type: String,
+                  default: ""
+                }
+          }
+      }
   },
   {
     timestamps: true,

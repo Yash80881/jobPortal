@@ -20,7 +20,10 @@ const isAuthenticated = (req, res, next) => {
             process.env.JWT_SECRET
         );
 
-        req.user = decoded;
+        req.user = {
+            id: decoded.id,
+            role: decoded.role
+        };
 
         next();
 
